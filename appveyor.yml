@@ -1,0 +1,19 @@
+
+init:
+ - set QTDIR=C:\Qt\5.11.1\mingw53_32
+ - set PATH=%PATH%;%QTDIR%\bin;C:\Qt\Tools\mingw530_32\bin
+ 
+build_script:
+  - qmake Attendance.pro
+  - mingw32-make
+  
+artifacts:
+  - path: release\deploy
+    name: windows
+  
+after_build:
+    - cd release
+    - mkdir deploy
+    - copy Attendance.exe deploy
+    - cd deploy
+    - windeployqt Attendance.exe
