@@ -24,3 +24,17 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui
 
 DISTFILES +=
+
+unix {
+    isEmpty(PREFIX) {
+        PREFIX = /usr/local
+    }
+    target.path = $$PREFIX/bin
+	desktop.path = $$PREFIX/share/applications/
+	desktop.files += extras/Attendance.desktop
+	icon.path = $$PREFIX/share/icons/hicolor/512x512/apps
+	icon512.files += extras/Attendance.png
+	INSTALLS += desktop
+    INSTALLS += target
+	
+}
