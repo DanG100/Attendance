@@ -18,8 +18,8 @@ after_build:
     - cd deploy
     - windeployqt Attendance.exe
 deploy:
-  - provider: GitHub
-  - auth_token:
+  provider: GitHub
+  auth_token:
     secure: GZNa7utcPcbg7EKCpRk3xv1fWvo66qE9VsAD5a1/HTmkORbrMvDEEXfbd/JVjc6U
   artifact: windows
   draft: true
