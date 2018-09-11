@@ -33,8 +33,9 @@ unix {
 	desktop.path = $$PREFIX/share/applications/
 	desktop.files += extras/Attendance.desktop
 	icon.path = $$PREFIX/share/icons/hicolor/512x512/apps
-	icon512.files += extras/Attendance.png
+	icon.files += extras/Attendance.png
 	INSTALLS += desktop
     INSTALLS += target
+	INSTALLS += icon
 	
 }
